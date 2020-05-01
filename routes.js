@@ -1,17 +1,15 @@
 import React, {useContext} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {
-  createStackNavigator,
-  useHeaderHeight,
-  Header,
-} from '@react-navigation/stack';
+import {createStackNavigator, Header} from '@react-navigation/stack';
 import {navigationRef} from './rootNavigation';
 import IDs from './IDs';
 import AnimationFlutter from './src/animation-flutter/AnimationFlutter';
 import AnimationTest from './src/test';
 import LinearGradient from 'react-native-linear-gradient';
 import spotifyPlayer from './src/spotify-player/SpotifyPlayer';
+import AppNavigator from './src/animtaion-tabbar/navigators/app-navigator';
+
 const Stack = createStackNavigator();
 const GradientHeader = (props) => {
   console.log('Header,', Header);
@@ -36,6 +34,13 @@ const RootContainerScreen = () => {
           initialRouteName={IDs.AnimationTest}
           //   headerMode={'none'}
         >
+          <Stack.Screen
+            options={{
+              headerShown: false,
+            }}
+            name={IDs.AnimationTabBar}
+            component={AppNavigator}
+          />
           <Stack.Screen
             options={{
               title: 'My home',

@@ -18,13 +18,13 @@ const AnimationTest = () => {
   const goToFlutter = () => {
     navigation.navigate(IDs.AnimationFlutter);
   };
-  const goToSpotifyPlayer = () => {
-    navigation.navigate(IDs.SpotifyPlayer);
+  const goToSpotifyPlayer = (nameId) => {
+    navigation.navigate(nameId);
   };
-  const ButtonNav = (color: string, label: string) => {
+  const ButtonNav = (color: string, label: string, nameId: string) => {
     return (
       <TouchableOpacity
-        onPress={goToSpotifyPlayer}
+        onPress={() => goToSpotifyPlayer(nameId)}
         activeOpacity={0.5}
         style={[styles.btn, {backgroundColor: color}]}>
         <Text style={styles.txt}>{label}</Text>
@@ -41,7 +41,8 @@ const AnimationTest = () => {
             style={styles.btn}>
             <Text style={styles.txt}>Flutter</Text>
           </TouchableOpacity>
-          {ButtonNav('#B78714', 'Spotify')}
+          {ButtonNav('#B78714', 'Spotify', IDs.SpotifyPlayer)}
+          {ButtonNav('rgb(242, 207, 90)', 'Tabbar', IDs.AnimationTabBar)}
         </View>
       </ScrollView>
     </SafeAreaView>
