@@ -18,7 +18,19 @@ const AnimationTest = () => {
   const goToFlutter = () => {
     navigation.navigate(IDs.AnimationFlutter);
   };
-  console.log(useHeaderHeight());
+  const goToSpotifyPlayer = () => {
+    navigation.navigate(IDs.SpotifyPlayer);
+  };
+  const ButtonNav = (color: string, label: string) => {
+    return (
+      <TouchableOpacity
+        onPress={goToSpotifyPlayer}
+        activeOpacity={0.5}
+        style={[styles.btn, {backgroundColor: color}]}>
+        <Text style={styles.txt}>{label}</Text>
+      </TouchableOpacity>
+    );
+  };
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
@@ -29,6 +41,7 @@ const AnimationTest = () => {
             style={styles.btn}>
             <Text style={styles.txt}>Flutter</Text>
           </TouchableOpacity>
+          {ButtonNav('#B78714', 'Spotify')}
         </View>
       </ScrollView>
     </SafeAreaView>

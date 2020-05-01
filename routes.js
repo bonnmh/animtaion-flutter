@@ -11,6 +11,7 @@ import IDs from './IDs';
 import AnimationFlutter from './src/animation-flutter/AnimationFlutter';
 import AnimationTest from './src/test';
 import LinearGradient from 'react-native-linear-gradient';
+import spotifyPlayer from './src/spotify-player/SpotifyPlayer';
 const Stack = createStackNavigator();
 const GradientHeader = (props) => {
   console.log('Header,', Header);
@@ -56,6 +57,14 @@ const RootContainerScreen = () => {
             }}
             name={IDs.AnimationFlutter}
             component={AnimationFlutter}
+          />
+          <Stack.Screen
+            options={{
+              cardStyle: {backgroundColor: 'transparent'},
+              headerShown: false,
+            }}
+            name={IDs.SpotifyPlayer}
+            component={spotifyPlayer}
           />
         </Stack.Navigator>
       </NavigationContainer>
