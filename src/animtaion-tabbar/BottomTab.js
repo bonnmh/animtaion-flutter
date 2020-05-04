@@ -98,7 +98,7 @@ const BottomTab = (props) => {
           style={{
             position: 'relative',
             top: 1,
-            transform: [{translateX: bump, translateY: 0}],
+            transform: [{translateX: bump}],
           }}>
           <Image
             resizeMode="stretch"

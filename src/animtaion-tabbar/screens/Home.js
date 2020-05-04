@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-
+import RNMorphingText from 'react-native-morphing-text';
 const Home = () => {
   return (
     <View
@@ -10,7 +10,15 @@ const Home = () => {
         alignItems: 'center',
         backgroundColor: 'white',
       }}>
-      <Text style={{fontSize: 24, fontWeight: 'bold'}}>Home Screen</Text>
+      <Text
+        style={{
+          fontSize: 24,
+          fontWeight: 'bold',
+          position: 'absolute',
+          bottom: 0,
+        }}>
+        Home Screen
+      </Text>
     </View>
   );
 };
